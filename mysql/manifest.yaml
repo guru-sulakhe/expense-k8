@@ -25,3 +25,23 @@ spec:
     spec:
     - name: nginx
       image: guru1188/mysql:v1.0
+
+------
+# for connection mysql and backend pods we need to ensure to include a service which will helps in communication between pods i.,e Cluster IP
+# This service is used to call mysql Pod
+apiVersion: v1
+kind: Service
+metadata: 
+  name: mysql
+  namespace: expense
+spec: 
+  selectors:
+    name: frontend
+    project: expense
+    component: frontend
+    environment: dev
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+    
