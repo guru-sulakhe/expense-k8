@@ -40,7 +40,7 @@ spec:
   selectors:
     project: expense
     component: frontend
-    environment: dev
+    tier: db
   ports:
   - protocol: TCP
     port: 8080
