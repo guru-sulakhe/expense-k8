@@ -43,6 +43,6 @@ spec:
     environment: dev
   ports:
   - protocol: TCP
-    port: 3306
-    targetPort: 3306
+    port: 8080
+    targetPort: 8080
     
