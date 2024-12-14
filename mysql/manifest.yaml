@@ -38,7 +38,7 @@ metadata:
   namespace: expense
 spec: 
   selectors:
-    name: frontend
+    name: mysql
     project: expense
     component: frontend
     environment: dev
