@@ -38,7 +38,6 @@ metadata:
   namespace: expense
 spec: 
   selectors:
-    name: mysql
     project: expense
     component: frontend
     environment: dev
