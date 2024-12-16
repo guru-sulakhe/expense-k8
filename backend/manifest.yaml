@@ -53,7 +53,7 @@ metadata:
 spec: 
   selectors:
     project: expense
-    component: frontend
+    component: backend
     tier: app
   ports:
   - protocol: TCP
