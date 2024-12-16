@@ -161,6 +161,6 @@ spec:
     tier: web
   ports:
   - protocol: TCP
-    port: 8080
+    port: 80 #servicer port
     targetPort: 8080
     
