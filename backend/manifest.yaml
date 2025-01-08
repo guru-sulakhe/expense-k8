@@ -43,7 +43,7 @@ spec:
         image: guru1188/backend:v1.0
         envFrom:
         - configMapRef:
-            name: backend
+            name: backend #your backend configmap name
 
 
 ------
