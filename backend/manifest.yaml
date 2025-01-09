@@ -41,12 +41,20 @@ spec:
       containers:
       - name: backend
         image: guru1188/backend:v1.0
-        livenessProbe:
+        # our backend server will run on http port 8080
+        livenessProbe: #checking health of backend server for a period of time, if it fails then it will restart the server
           httpGet:
             path: /health
             port: 8080
-          failureThreshold: 2
-          periodSeconds: 5
+          failureThreshold: 2 #how many times should it check for server failure, if it fails then restart will be done
+          periodSeconds: 5 #for every 5 sec it will health check
+          initialDelaySeconds: 30
+        readinessProbe: #checking health of backend server for a period of time, if it fails then it will restart the server
+          httpGet:
+            path: /health
+            port: 8080
+          failureThreshold: 2 #how many times should it check for server failure, if it fails then restart will be done
+          periodSeconds: 5 #for every 5 sec it will health check
           initialDelaySeconds: 30
         envFrom:
         - configMapRef:
