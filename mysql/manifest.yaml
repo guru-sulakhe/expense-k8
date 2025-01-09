@@ -23,10 +23,21 @@ spec:
         component: mysql
         tier: db
         project: expense
+
     spec:
       containers:
       - name: mysql
         image: guru1188/mysql:v1.0
+        readinessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10 #within 10 sec container should be ready
+          periodSeconds: 5 #every 5 sec 
+        livenessProbe:
+         tcpSocket:
+            port: 3306
+        initialDelaySeconds: 10
+        periodSeconds: 5
 
 ------
 # for connection mysql and backend pods we need to ensure to include a service which will helps in communication between pods i.,e Cluster IP
