@@ -10,7 +10,7 @@ metadata:
     project: expense
     tier: db
 spec:
-  replicas: 2
+  replicas: 2 #2 pods will be created 
   selector: 
     matchLabels:
       component: mysql
