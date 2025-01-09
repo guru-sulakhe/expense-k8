@@ -41,6 +41,16 @@ spec:
       containers:
       - name: backend
         image: guru1188/backend:v1.0
+        readinessProbe: #This will define when our container is ready, mysql server is running on tcp protocol of port 3306, if not we should add http port
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10 #within 10 sec container should be ready
+          periodSeconds: 5 #every 5 sec 
+        livenessProbe: # this will health check the backend server for every time period by using a periodSeconds
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
         envFrom:
         - configMapRef:
             name: backend #your backend configmap name
