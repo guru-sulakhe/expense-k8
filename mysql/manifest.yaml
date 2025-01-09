@@ -23,7 +23,6 @@ spec:
         component: mysql
         tier: db
         project: expense
-
     spec:
       containers:
       - name: mysql
