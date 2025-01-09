@@ -54,7 +54,7 @@ spec:
             path: /health
             port: 8080
           failureThreshold: 2 #how many times should it check for server failure, if it fails then restart will be done
-          periodSeconds: 5 #for every 5 sec it will health check
+          periodSeconds: 5 #for every 5 sec it will check whether backend server is ready or not
           initialDelaySeconds: 30
         envFrom:
         - configMapRef:
