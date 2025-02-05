@@ -171,7 +171,7 @@ metadata:
   namespace: expense
 spec:
   serviceRef:
-    name: frontend # route traffic to the awesome-service
+    name: frontend #your frontend-server name
     port: 80
   targetGroupARN: <arn-to-targetGroup> #your target-group ARN
     
