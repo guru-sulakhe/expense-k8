@@ -6,7 +6,8 @@ metadata:
   name: backend
   namespace: expense
 data:
-  DB_HOST: mysql #mysql service component service name
+  # DB_HOST: mysql #mysql service component service name
+  DB_HOST: db-dev.guru97s.cloud
 --------
 kind: Deployment
 apiVersion: apps/v1
@@ -37,7 +38,8 @@ spec:
       initContainers: #run before the main containers run, if initcontainers fail then main containers will not run
       - name: init-myservice
         image: busybox:1.28
-        command: ['sh', '-c', "until nslookup mysql; do echo waiting for myservice; sleep 2; done"]
+        #command: ['sh', '-c', "until nslookup mysql; do echo waiting for myservice; sleep 2; done"]
+        command: ['sh', '-c', "until nslookup db-dev.guru97s.cloud; do echo waiting for myservice; sleep 2; done"]
       containers:
       - name: backend
         image: guru1188/backend:v1.0
