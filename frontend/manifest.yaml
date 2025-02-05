@@ -8,6 +8,7 @@ metadata:
 data:
   # for not applying rebuild we need to mention nginx.conf file and also nginx can't be run on 80 port in kubernetes thus we are including out nginx.conf
   # thus changin port number of nginx to 8080
+  # frotend will be connected to backend in nginx.conf 
   nginx.conf: |
   user www-data;
     worker_processes 4;
