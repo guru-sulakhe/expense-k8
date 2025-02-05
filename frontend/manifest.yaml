@@ -172,5 +172,5 @@ spec:
   serviceRef:
     name: frontend # route traffic to the awesome-service
     port: 80
-  targetGroupARN: <arn-to-targetGroup>
+  targetGroupARN: <arn-to-targetGroup> #your target-group ARN
     
