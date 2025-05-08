@@ -37,7 +37,7 @@ spec:
             port: 3306
           initialDelaySeconds: 10
           periodSeconds: 5 #every 5 sec
-
+# $ kubectl get pods -n expense
 ---
 # for connection mysql and backend pods we need to ensure to include a service which will helps in communication between pods i.,e Cluster IP
 # This service is used to call mysql Pod
