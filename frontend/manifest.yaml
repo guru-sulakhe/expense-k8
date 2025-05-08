@@ -160,7 +160,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80 #servicer port
-    targetPort: 8080
+    targetPort: 8080 #for security reasons we can't claim port 80, thus we claim port 8080
 ---
 apiVersion: elbv2.k8s.aws/v1beta1
 kind: TargetGroupBinding
