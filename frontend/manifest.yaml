@@ -127,7 +127,7 @@ spec:
       - name: frontend
         image: guru1188/frontend:v1.0
         # mounting volume nginx-conf
-      volumeMounts:
+      volumeMounts: #mounting nginx.conf to the container
       - name: nginx-conf
         mountPath: /etc/nginx/nginx.conf
         subPath: nginx.conf
