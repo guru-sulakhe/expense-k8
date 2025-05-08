@@ -96,7 +96,7 @@ data:
         }
 
     }
---------
+---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -142,9 +142,7 @@ spec:
           items:
           - key: nginx.conf
             path: nginx.conf
-
-
-------
+---
 # for connection mysql and backend pods we need to ensure to include a service, which will helps in communication between pods i.,e LoadBalancer
 # This service helps in configuring in R53 records
 apiVersion: v1
@@ -163,7 +161,7 @@ spec:
   - protocol: TCP
     port: 80 #servicer port
     targetPort: 8080
-------
+---
 apiVersion: elbv2.k8s.aws/v1beta1
 kind: TargetGroupBinding
 metadata:
