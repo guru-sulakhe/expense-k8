@@ -49,7 +49,7 @@ metadata:
   #attaching to expense namespace
   namespace: expense
 spec: 
-  selector:
+  selector: #these are mysql pod labels
     project: expense
     component: mysql
     tier: db
