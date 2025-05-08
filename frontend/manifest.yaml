@@ -135,7 +135,7 @@ spec:
       # envFrom:
       # - configMapRef:
       #     name: frontend
-      volumes:
+      volumes: #mounting configuration as volumes
       - name: nginx-conf
         configMap:
           name: frontend
