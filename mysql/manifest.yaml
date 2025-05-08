@@ -41,6 +41,7 @@ spec:
 ---
 # for connection mysql and backend pods we need to ensure to include a service which will helps in communication between pods i.,e Cluster IP
 # This service is used to call mysql Pod
+# clusterIP will be accessed only inside the cluster, if you use nodePort then pods will be accessed outside the cluster which will leads to unknown accessing 
 apiVersion: v1
 kind: Service
 metadata: 
