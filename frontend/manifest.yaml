@@ -135,6 +135,8 @@ spec:
       # envFrom:
       # - configMapRef:
       #     name: frontend
+      # This means you create a ConfigMap to store your configuration data, and then you can mount that ConfigMap as a volume in a pod, 
+      # allowing your containers to access the configuration data as files within their filesystem. 
       volumes: #mounting configuration as volumes
       - name: nginx-conf
         configMap: #your configmap name
