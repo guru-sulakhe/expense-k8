@@ -27,7 +27,7 @@ spec:
       containers:
       - name: mysql
         image: guru1188/mysql:v1.0
-        readinessProbe: #mysql server is running on tcp protocol of port 3306, if not we should add http port
+        readinessProbe: #mysql server is running on tcp protocol of port 3306 and won't have http EndPoint, if not we should add http port
           tcpSocket:
             port: 3306
           initialDelaySeconds: 10 #within 10 sec container should be ready
